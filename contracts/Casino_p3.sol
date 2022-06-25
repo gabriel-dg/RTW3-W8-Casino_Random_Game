@@ -103,8 +103,10 @@ contract Casino {
             revealBet[_commitment].randomB = _random;
             revealBet[_commitment].revealedB = true;
         }
-        //FIXME: Where is verification that hash(random)=hash ??!!
-        //NOTE: ask if both parts already submitted their _random
+        //FIXME: missing verification for hash(random)=hash
+        //FIXME: What happens if both sides cheat?
+
+        //NOTE: evaluates if both parts already submitted their _random
         if (
             revealBet[_commitment].revealedA && revealBet[_commitment].revealedB
         ) {
