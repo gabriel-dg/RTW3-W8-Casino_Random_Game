@@ -19,7 +19,7 @@ https://kovan-optimistic.etherscan.io/address/0xb510c7B0F92528fD54189e11F47344fe
 
 * ~~// TODO: implement Protocol#3~~
 * Include Protocol#3 tests in casino-test.js
-* Verify hashA == hash(ramdomA) && hashB == hash(ramdomB)
+* ~~Verify hashA == hash(ramdomA) && hashB == hash(ramdomB)~~
 
 ----
 
