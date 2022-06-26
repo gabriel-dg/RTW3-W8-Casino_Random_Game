@@ -95,7 +95,7 @@ contract Casino {
     function reveal(uint256 _commitment, uint256 _random) external {
         //NOTE: check who (A or B) is calling the function and store _random and timestamp
         if (msg.sender == proposedBet[_commitment].sideA) {
-            //TODO: check if A is cheating
+            //TODO: check if A is cheating - Check the case if A sends a different _commitment + _random
             require(
                 _commitment == uint256(keccak256(abi.encodePacked(_random))),
                 "You are trying to cheat!!"
