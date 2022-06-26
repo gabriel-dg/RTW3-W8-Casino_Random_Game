@@ -9,8 +9,9 @@
 
 ----
 
-Kovan Optimism Contract address: 
-0x252046d1c9b302253fD5f421b0D9a899033306A9
+Contract address (in Kovan Optimism network): 
+0xb510c7B0F92528fD54189e11F47344feEC9007bc
+https://kovan-optimistic.etherscan.io/address/0xb510c7B0F92528fD54189e11F47344feEC9007bc
 
 ----
 
