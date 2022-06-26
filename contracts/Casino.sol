@@ -95,17 +95,25 @@ contract Casino {
     function reveal(uint256 _commitment, uint256 _random) external {
         //NOTE: check who (A or B) is calling the function and store _random and timestamp
         if (msg.sender == proposedBet[_commitment].sideA) {
+            //TODO: check if A is cheating
+            require(
+                _commitment == uint256(keccak256(abi.encodePacked(_random))),
+                "You are trying to cheat!!"
+            );
             revealBet[_commitment].revealAAt = block.timestamp;
             revealBet[_commitment].randomA = _random;
             revealBet[_commitment].revealedA = true;
         } else if (msg.sender == acceptedBet[_commitment].sideB) {
+            //TODO: check if B is cheating
+            require(
+                acceptedBet[_commitment].commitmentB ==
+                    uint256(keccak256(abi.encodePacked(_random))),
+                "You are trying to cheat!!"
+            );
             revealBet[_commitment].revealBAt = block.timestamp;
             revealBet[_commitment].randomB = _random;
             revealBet[_commitment].revealedB = true;
         }
-        //FIXME: missing verification for hash(random)=hash
-        //FIXME: What happens if both sides cheat?
-
         //NOTE: evaluates if both parts already submitted their _random
         if (
             revealBet[_commitment].revealedA && revealBet[_commitment].revealedB
